@@ -42,7 +42,7 @@ enum planck_keycodes {
 
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
-#define NUM TG(_NUM)
+#define TGNUM TG(_NUM)
 #define MEDIA MO(_MEDIA)
 #define ARROWS MO(_ARROWS)
 #define TGARRO TG(_ARROWS)
@@ -80,20 +80,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Lower
  * ,-----------------------------------------------------------------------------------.
- * |  Del |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |      |
+ * |  Del |      |      |      |      |      |   -  |   7  |   8  |   9  |   /  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |   %  |   $  |   €  |      |      |   -  |   4  |   5  |   6  |   *  | Enter|
+ * |      |      |   $  |   €  |      |      |   +  |   4  |   5  |   6  |   *  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |   +  |   1  |   2  |   3  |   /  |   =  |
+ * |      |      |   %  |      |      |      |   .  |   1  |   2  |   3  |   ,  |   =  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  NUM |      |      |      |      |             |   0  |   ,  |   ,  |   .  |   .  | 
+ * |TGNUM |TGArro|      |      |      |             |   0  |      |      |      |      | 
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-	KC_DEL,  KC_1,    KC_2,    KC_3,     KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
-    _______, KC_PERC, KC_DLR,  LCA(KC_5),_______, _______, KC_PMNS, KC_4,    KC_5,    KC_6,    KC_PAST, _______,
-    _______, _______, _______, _______,  _______, _______, KC_PPLS, KC_1,    KC_2,    KC_3,    KC_PSLS, KC_EQL,
-    NUM,     TGARRO,  _______, _______,  _______, _______, _______, KC_0,    KC_COMM, KC_COMM, KC_DOT,  KC_DOT
+	KC_DEL,  _______, _______, _______,  _______, _______, KC_PMNS, KC_7,    KC_8,    KC_9,    KC_PSLS, _______,
+    _______, _______, KC_DLR,  LCA(KC_5),_______, _______, KC_PPLS, KC_4,    KC_5,    KC_6,    KC_PAST, _______,
+    _______, _______, KC_PERC, _______,  _______, _______, KC_DOT,  KC_1,    KC_2,    KC_3,    KC_COMM, KC_EQL,
+    TGNUM,   TGARRO,  _______, _______,  _______, _______, _______, KC_0,    _______, _______, _______, _______
 ),
 
 /* Raise
@@ -109,27 +109,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT_planck_grid(
     KC_DEL,  KC_EXLM, KC_CIRC, KC_GRV,  KC_TILD, _______, _______, KC_PPLS, KC_LBRC, KC_RBRC, KC_QUES, _______,
-    _______, KC_AT,   KC_AMPR, KC_COLN, KC_SLSH, _______, _______, KC_COMM,  KC_LPRN, KC_RPRN, KC_ASTR, _______, 
-    _______, KC_HASH, KC_PERC, KC_PIPE, KC_BSLS, _______, _______, KC_DOT, KC_LEFT, KC_RGHT, KC_UP,   KC_DOWN,
+    _______, KC_AT,   KC_AMPR, KC_COLN, KC_SLSH, _______, _______, KC_COMM, KC_LPRN, KC_RPRN, KC_ASTR, _______, 
+    _______, KC_HASH, KC_PERC, KC_PIPE, KC_BSLS, _______, _______, KC_DOT,  KC_LEFT, KC_RGHT, KC_UP,   KC_DOWN,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
 /* 'NUM'
  * ,-----------------------------------------------------------------------------------.
- * |  ESC |  F1  |  F2  |  F2  |  F4  |  No  |   €  | KP7  | KP8  | KP9  |  Del | Bksp |
+ * |  ESC |  No  |  No  |  No  |  No  |  No  |   -  |   7  |   8  |   9  |   /  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | CALC |  F5  |  F6  |  F7  |  F8  |  No  |   -  | KP4  | KP5  | KP6  |   *  | Enter|
+ * | CALC |  No  |   $  |   €  |  No  |  No  |   +  |   4  |   5  |   6  |   *  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|  F9  |  F10 |  F11 |  F12 |  No  |   +  | KP1  | KP2  | KP3  |   /  |   =  |
+ * | Shift|  No  |   %  |  No  |  No  |  No  |   .  |   1  |   2  |   3  |   ,  |   =  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  NUM |  No  |  No  | Alt  |Raise |    Space    | KP0  |   ,  |   ,  |   .  |   .  |
+ * |TGNUM |  No  |  No  | Alt  |Raise |             |   0  |  No  |  No  |  No  |  No  |
  * `-----------------------------------------------------------------------------------'
 */
 [_NUM] = LAYOUT_planck_grid(
-	KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_NO,   LCA(KC_5),KC_KP_7, KC_KP_8, KC_KP_9, KC_DEL,   KC_BSPC,
-    KC_CALC, KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_NO,   KC_PMNS,  KC_KP_4, KC_KP_5, KC_KP_6, KC_PAST,  KC_ENT,
-    _______, KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NO,   KC_PPLS,  KC_KP_1, KC_KP_2, KC_KP_3, KC_PSLS,  KC_EQL,
-    NUM,     KC_NO,   KC_NO,   _______, _______, _______, _______,  KC_KP_0, KC_COMM, KC_COMM, KC_DOT,   KC_DOT 
+	KC_ESC,  KC_NO,   KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_PMNS,  KC_KP_7, KC_KP_8,  KC_KP_9, KC_PSLS, _______,
+    KC_CALC, KC_NO,   KC_DLR,  LCA(KC_5),KC_NO,   KC_NO,   KC_PPLS,  KC_KP_4, KC_KP_5,  KC_KP_6, KC_PAST, _______,
+    _______, KC_NO,   KC_PERC, KC_NO,    KC_NO,   KC_NO,   KC_DOT,   KC_KP_1, KC_KP_2,  KC_KP_3, KC_COMM, KC_EQL,
+    TGNUM,   KC_NO,   KC_NO,   _______,  KC_NO,   _______, _______,  KC_KP_0, KC_NO,    KC_NO,   KC_NO,   KC_NO
 ),
 
 /* 'MEDIA'
