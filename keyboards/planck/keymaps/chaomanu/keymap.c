@@ -80,20 +80,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Lower
  * ,-----------------------------------------------------------------------------------.
- * |  Del |   1  |   2  |   3  |   4  |   5  |   -  |   7  |   8  |   9  |   /  |      |
+ * |  Del |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |   $  |   €  |      |      |   +  |   4  |   5  |   6  |   *  |      |
+ * |      |   €  |   $  |   :  |      |      |   -  |   4  |   5  |   6  |   *  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Caps |      |   %  |      |      |      |   .  |   1  |   2  |   3  |   ,  |   =  |
+ * | Caps |   #  |   %  |      |      |      |   +  |   1  |   2  |   3  |   /  |   =  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |TGNUM |TGArro|      |      |      |             |   0  |      |      |      |      | 
+ * |TGNUM |TGArro|      |      |      |      .      |   0  |      |      |      |   ,  | 
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_planck_grid(
-	KC_DEL,  KC_1,    KC_2,    KC_3,     KC_4,    KC_5,    KC_PMNS, KC_7,    KC_8,    KC_9,    KC_PSLS, _______,
-    _______, _______, KC_DLR,  LCA(KC_5),_______, _______, KC_PPLS, KC_4,    KC_5,    KC_6,    KC_PAST, _______,
-    KC_CAPS, _______, KC_PERC, _______,  _______, _______, KC_DOT,  KC_1,    KC_2,    KC_3,    KC_COMM, KC_EQL,
-    TGNUM,   TGARRO,  _______, _______,  _______, _______, _______, KC_0,    _______, _______, _______, _______
+	KC_DEL,  KC_1,     KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
+    _______, LCA(KC_5),KC_DLR,  KC_COLN, _______, _______, KC_PMNS, KC_4,    KC_5,    KC_6,    KC_PAST, _______,
+    KC_CAPS, KC_HASH,  KC_PERC, _______, _______, _______, KC_PPLS, KC_1,    KC_2,    KC_3,    KC_PSLS, KC_EQL,
+    TGNUM,   TGARRO,   _______, _______, _______, _______, KC_DOT,  KC_0,    _______, _______, _______, KC_COMM
 ),
 
 /* Raise
@@ -116,20 +116,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* 'NUM'
  * ,-----------------------------------------------------------------------------------.
- * |  ESC |  No  |  No  |  No  |  No  |  No  |   -  |   7  |   8  |   9  |   /  |      |
+ * |  ESC |  No  |  No  |  No  |  No  |  No  |  No  |   7  |   8  |   9  |  No  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | CALC |  No  |   $  |   €  |  No  |  No  |   +  |   4  |   5  |   6  |   *  |      |
+ * | CALC |   €  |   $  |  No  |  No  |  No  |   -  |   4  |   5  |   6  |   *  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|  No  |   %  |  No  |  No  |  No  |   .  |   1  |   2  |   3  |   ,  |   =  |
+ * |      |   #  |   %  |  No  |  No  |  No  |   +  |   1  |   2  |   3  |   /  |   =  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |TGNUM |  No  |  No  | Alt  |Raise |             |   0  |  No  |  No  |  No  |  No  |
+ * |TGNUM |  No  |  No  |      |Raise |      .      |   0  |  No  |  No  |  No  |   ,  |
  * `-----------------------------------------------------------------------------------'
 */
 [_NUM] = LAYOUT_planck_grid(
-	KC_ESC,  KC_NO,   KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_PMNS,  KC_KP_7, KC_KP_8,  KC_KP_9, KC_PSLS, _______,
-    KC_CALC, KC_NO,   KC_DLR,  LCA(KC_5),KC_NO,   KC_NO,   KC_PPLS,  KC_KP_4, KC_KP_5,  KC_KP_6, KC_PAST, _______,
-    _______, KC_NO,   KC_PERC, KC_NO,    KC_NO,   KC_NO,   KC_DOT,   KC_KP_1, KC_KP_2,  KC_KP_3, KC_COMM, KC_EQL,
-    TGNUM,   KC_NO,   KC_NO,   _______,  KC_NO,   _______, _______,  KC_KP_0, KC_NO,    KC_NO,   KC_NO,   KC_NO
+	KC_ESC,  KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_KP_7, KC_KP_8,  KC_KP_9, KC_NO,   _______,
+    KC_CALC, LCA(KC_5),KC_DLR,  KC_NO,   KC_NO,   KC_NO,   KC_PMNS,  KC_KP_4, KC_KP_5,  KC_KP_6, KC_PAST, _______,
+    _______, KC_HASH,  KC_PERC, KC_NO,   KC_NO,   KC_NO,   KC_PPLS,  KC_KP_1, KC_KP_2,  KC_KP_3, KC_PSLS, KC_EQL,
+    TGNUM,   KC_NO,    KC_NO,   _______, KC_NO,   _______, KC_DOT,   KC_KP_0, KC_NO,    KC_NO,   KC_NO,   KC_COMM
 ),
 
 /* 'MEDIA'
