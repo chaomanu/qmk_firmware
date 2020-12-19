@@ -48,7 +48,7 @@ enum planck_keycodes {
 #define TGARRO TG(_ARROWS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
+ 
 /* Qwerty
  * ,-----------------------------------------------------------------------------------.
  * | Esc  |   q  |   w  |   e  |   r  |   t  |   z  |   u  |   i  |   o  |   p  | Bksp |
